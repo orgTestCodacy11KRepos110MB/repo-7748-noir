@@ -21,13 +21,12 @@ pub fn find_dir<P: AsRef<Path>>(path: P, dir_name: &str) -> Option<PathBuf> {
 
 // There is no distinction between files and folders
 fn find_artifact(entries: ReadDir, artifact_name: &str) -> Option<PathBuf> {
-    let mut entry: Vec<_> = entries
+    let entry: Option<_> = entries
         .into_iter()
         .flatten()
-        .filter(|entry| entry.file_name().to_str() == Some(artifact_name))
-        .collect();
+        .find(|entry| entry.file_name().to_str() == Some(artifact_name));
 
-    Some(entry.pop()?.path())
+    Some(entry?.path())
 }
 
 fn list_files_and_folders_in<P: AsRef<Path>>(path: P) -> Option<ReadDir> {
