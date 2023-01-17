@@ -7,6 +7,7 @@ use serde::Serialize;
 
 use crate::errors::InputParserError;
 use crate::{Abi, AbiType};
+
 /// This is what all formats eventually transform into
 /// For example, a toml file will parse into TomlTypes
 /// and those TomlTypes will be mapped to Value

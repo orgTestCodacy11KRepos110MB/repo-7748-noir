@@ -1,9 +1,10 @@
+use serde::{Deserialize, Serialize};
+use std::collections::BTreeMap;
+
+use acvm::FieldElement;
+
 use super::InputValue;
 use crate::{errors::InputParserError, Abi, AbiType};
-use acvm::FieldElement;
-use serde::Serialize;
-use serde_derive::Deserialize;
-use std::collections::BTreeMap;
 
 pub(crate) fn parse_toml(
     input_string: &str,

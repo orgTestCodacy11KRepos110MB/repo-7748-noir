@@ -1,9 +1,9 @@
+use serde::{Deserialize, Serialize};
 use std::{collections::BTreeMap, convert::TryInto, str};
 
 use acvm::FieldElement;
 use errors::AbiError;
 use input_parser::InputValue;
-use serde::{Deserialize, Serialize};
 
 // This is the ABI used to bridge the different TOML formats for the initial
 // witness, the partial witness generator and the interpreter.
