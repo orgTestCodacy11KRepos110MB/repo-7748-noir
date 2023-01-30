@@ -16,7 +16,9 @@ exclude = ["examples/9/merkle_tree_processor"]
 default-members = ["crates/nargo"]
 
 [workspace.package]
+# x-release-please-start-version
 version = "0.1.0"
+# x-release-please-end
 authors = ["Kevaundray Wedderburn <kevtheappdev@gmail.com>"]
 edition = "2021"
 rust-version = "1.64"
